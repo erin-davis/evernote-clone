@@ -8,12 +8,31 @@ import styles from "./styles";
 class EditorComponent extends React.Component{
   constructor(){
     super();
+    this.state = {
+      text: '',
+      title: '',
+      id: ''
+    }
   }
 
   render(){
+    const {classes} = this.props;
     return(
-      <div>hello from editor.js</div>
+      <div className={classes.editorContainer}>
+        <ReactQuill
+        value={this.state.text}
+        onChange={this.updateBody}>
+        </ReactQuill>
+      </div>
     )
   }
+  updateBody = async (val) =>{
+    await this.setState({text: val});
+    this.update();
+  };
+  update = debounce(() =>{
+    console.log('UPDATING DATABASE')
+    //will wait 2 seconds also comeback later?
+  }, 2000);
 }
 export default withStyles(styles)(EditorComponent);
