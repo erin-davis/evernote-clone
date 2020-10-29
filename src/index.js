@@ -9,14 +9,14 @@ const firebase = require('firebase');
 require('firebase/firestore');
 //in order to get initialzeApp to stop throwing an error, I installed version 6.2.3
 firebase.initializeApp({
-  apiKey: "AIzaSyCDxUJSkhA1UMW300CBesp0ay2qlYr1kfE",
-  authDomain: "evernote-clone-89c6e.firebaseapp.com",
-  databaseURL: "https://evernote-clone-89c6e.firebaseio.com",
-  projectId: "evernote-clone-89c6e",
-  storageBucket: "evernote-clone-89c6e.appspot.com",
-  messagingSenderId: "55756198939",
-  appId: "1:55756198939:web:9beadd02f58f93805314be",
-  measurementId: "G-96EHT9N2PX"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASEURL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 });
 
 ReactDOM.render(

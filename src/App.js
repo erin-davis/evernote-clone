@@ -49,7 +49,7 @@ class App extends React.Component{
           data['id'] = _doc.id;
           return data;
         })
-        console.log('this is notes in app.js', notes)
+        // console.log('this is notes in app.js', notes)
         this.setState({ notes: notes })
       });
   }
@@ -58,7 +58,7 @@ class App extends React.Component{
     this.setState({selectedNoteIndex: index, selectedNote: note});
   }
   noteUpdate = (id, noteObj) =>{
-    console.log('from noteUpdate in app.js, this is id and noteobj', id, noteObj)
+    // console.log('from noteUpdate in app.js, this is id and noteobj', id, noteObj)
     firebase
       .firestore()
       .collection('notes')

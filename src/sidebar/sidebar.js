@@ -54,7 +54,7 @@ class SidebarComponent extends React.Component{
         </div>
       ) 
     } else {
-      return(<div>If you see this, I've goofed</div>)
+      return(<div>Loading...</div>)
     }
   }
   newNoteBtnClick = () =>{
